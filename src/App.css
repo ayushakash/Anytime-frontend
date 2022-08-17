@@ -1,38 +1,289 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (max-width:557px){
+  .main-component{
+    height:100%;
+    /* margin-bottom: -25px; */
   }
+  #card-body{
+
+    width:auto;
+  }
+
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-component{
+
+
+  width: 100%;
+  height:550px;
+  /* margin-top: 10px; */
+  /* border: 1px solid blue; */
+  overflow: scroll;
+  overflow-x: hidden;
+  border-radius: 20px;
+  background-color: whitesmoke;
+  
+  
+  
+}
+.card-collection{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  
+  
+}
+.card{
+
+  margin: 5px;
+}
+.row{
+  justify-content: center;
+  /* box-shadow: 10px 10px 5px lightblue; */
+
 }
 
-.App-link {
-  color: #61dafb;
+.card-title{
+
+  color:gray;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.star-icon{
+  width:10px;
+  margin-top: -3px;
+}
+
+.review-number{
+  margin-top: 3px;
+
+}
+
+.basket-icon{
+  margin-top: -8px;
+  width:20px;
+  margin-right: 2px;
+}
+
+
+/* CSS */
+.button-33 {
+  background-color: #c2fbd7;
+  border-radius: 50px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-left: 5px;
+}
+
+.button-33:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.rating{
+  margin-top: 8px;
+}
+
+.quantity-input{
+  border: 1px solid #c2fbd7;
+  
+  border-radius: 5px;
+  width:50%;
+  margin-bottom: 10px;
+}
+.cart-count{
+
+  display: block;
+  float:right;
+  margin-right: 20px;
+
+}
+.card{
+
+  width: 100%;
+}
+.card-img-top{
+
+  height: 150px;
+  /* width:250px; */
+}
+
+.order-value{
+
+  float:right;
+  margin-top: 5px;
+
+  margin-right: 20px;
+}
+
+body{
+  background-color: whitesmoke;
+}
+
+.icon{
+  width:35px;
+  margin-right:5px;
+
+}
+
+.hori{
+
+  /* margin:0px; */
+  padding:0px;
+  box-sizing: border-box;
+  
+}
+.chkout-img-top{
+
+width:150px;
+height:150px;
+
+}
+.chkout-title{
+
+  color: black;
+  font-size: medium;
+  padding: 10px;
+  height: 25px;
+  width: 150px;
+  text-align: center
+}
+.heading{
+text-align: center;
+
+}
+.trolley-icon{
+
+  width:25px;
+}
+.chkout-items{
+  color:black;
+  height: 150px;
+  width:150px;
+  font-size: small;
+  padding:50px;
+  /* padding:20px; */
+
+}
+.serial{
+  display: block;
+  height: 25px;
+  width: 40px;
+  text-align: center;
+
+}
+p.serial {
+padding-top: 11px;
+  
+}
+
+.subtotal{
+
+  /* border:1px solid black; */
+  padding:10px;
+  width:100%;
+}
+.modeOfPayment{
+
+  display: flex;
+}
+.payment-button{
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  width:100px;
+  margin:10px;
+  border-radius: 10%;
+  padding:0px;
+  border-color: rgb(125, 206, 19);
+}
+.payment-button:hover{
+background-color:white;
+}
+.button-icon{
+  width:60px;
+  margin-right:5px;
+  
+}
+
+#floatingTextarea2{
+  
+  height:100px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.location-button{
+
+  margin:15px;
+  border-radius: 10px;
+  border:1px solid rgb(0, 150, 255);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.location-button:hover{
+  background-color:white;
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+.location-image{
+
+  width:30px;
+}
+
+
+
+/* CSS */
+.button-68 {
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: #27ae60;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.button-68:hover {
+  background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+}
+
+.button-68:active {
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+.button-68:hover {
+  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
 }

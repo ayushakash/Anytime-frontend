@@ -1,13 +1,27 @@
-// eslint-disable-next-line;
-import React from 'react'
+
+import React,{useState} from 'react'
+import Body from './Body'; 
+
 
 const Navbar = () => {
+  const [quantitySum, setQuantitySum] = useState([]);
+  const sum=quantitySum.reduce((partialSum, a) => partialSum + a, 0);
+
+    
+    
+    const bodyToNavbar=(quantity)=>{
+
+      setQuantitySum([...quantitySum, quantity]);  
+
+    }
+
+
   return (
     <>
     
     <nav className="navbar navbar-expand-lg bg-light">
   <div className="container-fluid">
-    <a className="navbar-brand" href="/">Navbar</a>
+    <a className="navbar-brand" href="/"><img src="/24-hours.png" alt="image" className='icon'></img>Anytime Mart</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -34,13 +48,20 @@ const Navbar = () => {
           <a className="nav-link disabled">Disabled</a>
         </li>
       </ul>
-      <form className="d-flex" role="search">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn btn-outline-success" type="submit">Search</button>
+      <form className="d-flex " role="search">
+        {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/> */}
+        <button type="button" class="btn btn-primary position-relative">Cart
+  <img src="/shopping-basket.png" alt="image" className='basket-icon'></img>
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    {sum}
+    <span class="visually-hidden">unread messages</span>
+  </span>
+</button>
       </form>
     </div>
   </div>
 </nav>
+{/* <Body bodyToNavbar={bodyToNavbar}/>   */}
       
     </>
   )
