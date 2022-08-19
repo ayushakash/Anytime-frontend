@@ -1,5 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {useState} from 'react';
 import Navbar from './components/Navbar'; 
 import Body from './components/Body'; 
 import TotalCost from './components/TotalCost'; 
@@ -13,21 +14,38 @@ import {
 
 
 
+
 function App() {
+  const [quantitySum, setQuantitySum] = useState([]);
+  const [cartData, setCartData] = useState([]);
+  const sum=quantitySum.reduce((partialSum, a) => partialSum + a, 0);
+  let dummyData=[]
+  // let data={_id,images,title,price,intQuantity,totalCost}
+  
+  const bodyToNavbar=(quantity,cartArray)=>{
+    
+    console.log(cartArray);
+    dummyData.push(cartArray);
+    console.log(dummyData);
+    setQuantitySum([...quantitySum, quantity]);
+      
+    setCartData((cartArray));
+    
+    // console.log((cartArray));
+    // console.log(quantity);
+
+  }
   return (
      <>
-<Navbar />
+<Navbar sum={sum} />
+
 <Routes>
-      <Route   path="/" element={<Checkout  />}>
-      <Route path="cart" element={<Body />}>
-        {/* <Route index element={<Body />} /> */}
-        
-      </Route>
-      </Route>
-    </Routes>
-      {/* <Navbar /> */}
-      
-      
+                 <Route exact path='/' element={< Body bodyToNavbar={bodyToNavbar} />}></Route>
+                 <Route exact path='/cart' element={< Checkout cartData={cartData} />}></Route>
+                 
+          </Routes>
+
+
       
     </>
   );

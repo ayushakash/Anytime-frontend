@@ -3,7 +3,7 @@ import Card from './Card';
 import {datas} from './Data';
 import Checkout from './Checkout';
 
-const Body = ({bodyToNavbar}) => {
+ const Body = ({bodyToNavbar}) => {
 
   const [totalCost, setTotalCost] = useState();
   const [final, setFinal] = useState([]);
@@ -12,25 +12,29 @@ const Body = ({bodyToNavbar}) => {
   const[title,setTitle]=useState();
   const[price,setPrice]=useState();
   const[_id,set_id]=useState();
-//   const[count,setCount]=useState(count);
-    // let updatedCount;
-
   const[quantityToCheckout,setQuantityToCheckout]=useState();
+
+  const [cartArray,setCartArray]=useState([]);
+  
+  
   
   const cardToBody=(total,quantity,title,images,price,_id)=>{
-        total=Math.round(total)
-        setTotalCost(total);
-        setFinal([...final, total]);
-        let intQuantity=parseInt(quantity);
-        bodyToNavbar(intQuantity);
-        setQuantityToCheckout(intQuantity)
-        setImage(images);
-        setTitle(title);
-        setPrice(price);
-        set_id(_id);
-        // console.log(_id);
-        // setCount(count)
-            // updatedCount=count;
+      total=Math.round(total)
+      setTotalCost(total);
+      setFinal([...final, total]);
+      
+      
+      let intQuantity=parseInt(quantity);
+      bodyToNavbar(intQuantity,cartArray);
+      setQuantityToCheckout(intQuantity)
+      setImage(images);
+      setTitle(title);
+      setPrice(price);
+      set_id(_id);
+      // console.log(total,quantity,title,images,price,_id)
+        // const cart=[_id,image,title,price,intQuantity,total];
+        setCartArray([_id,images,title,price,intQuantity,total]);
+        
         
         
 
@@ -38,7 +42,7 @@ const Body = ({bodyToNavbar}) => {
 
     return (<> 
     <div className = "main-component" > <div className="card-collection">
-        <div class="row">
+        <div className="row">
             {
                 datas.map((curData) => {
                     return <Card key={curData._id} {...curData} cardToBody={cardToBody}/>
@@ -51,15 +55,15 @@ const Body = ({bodyToNavbar}) => {
     </div>
 </div>
 <div className="order-value">
-    <button type="button" class="btn btn-success">
+    <button type="button" className="btn btn-success">
         Total order value
-        <span class="badge text-bg-secondary">Rs.{sum}</span>
+        <span className="badge text-bg-secondary">Rs.{sum}</span>
     </button>
 </div>
  
- {/*  */}
+ 
 </>
     )
 }
 
-export default Body
+export default Body;

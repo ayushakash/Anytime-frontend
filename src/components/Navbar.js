@@ -1,19 +1,19 @@
 
 import React,{useState} from 'react'
 import Body from './Body'; 
+import {Link} from "react-router-dom";
 
-
-const Navbar = () => {
-  const [quantitySum, setQuantitySum] = useState([]);
-  const sum=quantitySum.reduce((partialSum, a) => partialSum + a, 0);
+const Navbar = ({sum}) => {
+  // const [quantitySum, setQuantitySum] = useState([]);
+  // const sum=quantitySum.reduce((partialSum, a) => partialSum + a, 0);
 
     
     
-    const bodyToNavbar=(quantity)=>{
+  //   const bodyToNavbar=(quantity)=>{
 
-      setQuantitySum([...quantitySum, quantity]);  
+  //     setQuantitySum([...quantitySum, quantity]);  
 
-    }
+    
 
 
   return (
@@ -21,7 +21,7 @@ const Navbar = () => {
     
     <nav className="navbar navbar-expand-lg bg-light">
   <div className="container-fluid">
-    <a className="navbar-brand" href="/"><img src="/24-hours.png" alt="image" className='icon'></img>Anytime Mart</a>
+    <Link className="navbar-brand" to="/"><img src="/24-hours.png" alt="image" className='icon'></img>Anytime Mart</Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -50,11 +50,13 @@ const Navbar = () => {
       </ul>
       <form className="d-flex " role="search">
         {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/> */}
-        <button type="button" class="btn btn-primary position-relative">Cart
+        <button type="button" className="btn btn-primary position-relative" >
+                
+        <Link className="add-button" to="/cart">Cart</Link>
   <img src="/shopping-basket.png" alt="image" className='basket-icon'></img>
-  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
     {sum}
-    <span class="visually-hidden">unread messages</span>
+    <span className="visually-hidden">unread messages</span>
   </span>
 </button>
       </form>
