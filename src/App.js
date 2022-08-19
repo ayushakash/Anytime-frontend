@@ -19,20 +19,17 @@ function App() {
   const [quantitySum, setQuantitySum] = useState([]);
   const [cartData, setCartData] = useState([]);
   const sum=quantitySum.reduce((partialSum, a) => partialSum + a, 0);
-  let dummyData=[]
-  // let data={_id,images,title,price,intQuantity,totalCost}
+  
   
   const bodyToNavbar=(quantity,cartArray)=>{
     
     console.log(cartArray);
-    dummyData.push(cartArray);
-    console.log(dummyData);
+    
     setQuantitySum([...quantitySum, quantity]);
       
-    setCartData((cartArray));
+    setCartData(current=>[...current,cartArray]);
+    console.log(cartData);
     
-    // console.log((cartArray));
-    // console.log(quantity);
 
   }
   return (

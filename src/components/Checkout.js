@@ -4,6 +4,8 @@ import CheckoutCard from './CheckoutCard';
 
 const Checkout = ({cartData}) => {
 
+  // console.log(cartData);
+
     const [name,setName]=useState('');
     const [email,setEmail]=useState('');
     const [address,setAddress]=useState('');
@@ -110,9 +112,9 @@ function showPosition(position) {
 
   
   
-  const [_id,images,title,price,intQuantity,totalCost]=cartData;
+  // const [_id,images,title,price,intQuantity,totalCost]=cartData;
   
-  let data=[{"title":title,"price":price,"image":images,"quantity":intQuantity,"totalCost":totalCost,"id":_id}]
+  // let data=[{"title":title,"price":price,"image":images,"quantity":intQuantity,"totalCost":totalCost,"id":_id}]
   
     
   return (
@@ -127,6 +129,7 @@ function showPosition(position) {
 
     
 
+<hr className="horic"></hr>
 <div className="h-100 d-flex flex-row justify-content-start align-items-end">
 <p className="serial">S No. </p>
 <p className="chkout-title">Item </p>
@@ -135,10 +138,11 @@ function showPosition(position) {
 <p className="chkout-title">Quantity</p>
 <p className="chkout-title">Total price</p>
 </div> 
-<hr className="hori"></hr>
+    <div className="cout">
             {
-              data.map((curData) => {
-                    return <CheckoutCard key={curData._id} {...curData} title={title} price={price} image={images} quantity={intQuantity} totalCost={totalCost} />
+              cartData.map((curData) => {
+                    
+                    return <CheckoutCard key={curData._id} {...curData} data={cartData} />
 
                 })
             }
@@ -146,16 +150,17 @@ function showPosition(position) {
 
 
   
-        {/* <CheckoutCard title={title} price={price} image={images} quantity={intQuantity} totalCost={totalCost} /> */}
+        
         
       
     </div>
 
 </div><hr className="hori"></hr>
+</div>
 <div className="order-value">
     <button type="button" className="btn btn-success">
         Total order value
-        <span className="badge text-bg-secondary">{totalCost}</span>
+        <span className="badge text-bg-secondary">0</span>
     </button>
 </div>
     </div>
@@ -207,20 +212,39 @@ function showPosition(position) {
     </div>
     <div className="heading"><h6>Mode of Payment</h6></div>
     <div className="modeOfPayment">
-    <button type="button" className="payment-button"><img src="/google-pay.png" alt="image" className='button-icon'></img></button>
-    <button type="button" className="payment-button"><img src="/paytm.png" alt="image" className='button-icon'></img></button>
-    <button type="button" className="payment-button"><img src="/upi2.png" alt="image" className='button-icon'></img></button>
+    <button type="button" className="payment-button" data-toggle="modal" data-target=".bd-example-modal-sm"><img src="/google-pay.png" alt="image" className='button-icon'></img></button>
+    <button type="button" className="payment-button" data-toggle="modal" data-target=".bd-example-modal-sm"><img src="/paytm.png" alt="image" className='button-icon'></img></button>
+    <button type="button" className="payment-button" data-toggle="modal" data-target=".bd-example-modal-sm"><img src="/upi2.png" alt="image" className='button-icon'></img></button>
     <button type="button" className="payment-button"><img src="/cod.jpg" alt="image" className='button-icon'></img></button>
 
 
     </div>
     <div className="d-grid gap-2">
-  <button className="button-68" type="submit" >CHECKOUT</button>
+  <button className="button-68" type="submit">CHECKOUT</button>
+
+  
+
+<div class="modal fade bd-example-modal-sm border border-primary" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div className="qr-content">Scan and Pay here</div>
+
+      <img src="/myqr.png" alt="image" className='qr-icon'></img>
+    </div>
+  </div>
+</div>
+  
+
+
+
+      
+
+</div>
   
 </div>
         
     </div>
-      </div>
+      
     </>
   )
 }

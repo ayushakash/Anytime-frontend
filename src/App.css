@@ -139,8 +139,8 @@ body{
 
 .hori{
 
-  /* margin:0px; */
-  padding:0px;
+  /* margin:10px; */
+  padding:5px;
   box-sizing: border-box;
   
 }
@@ -161,6 +161,7 @@ height:150px;
 }
 .heading{
 text-align: center;
+/* margin-bottom: 5px; */
 
 }
 .trolley-icon{
@@ -312,4 +313,25 @@ background-color:white;
 
   text-decoration: none;
   color:white;
+}
+.qr-content{
+
+  text-align: center;
+  font-size: large ;
+  font-weight: 600;
+}
+
+.cout{
+  /* background-color: #27ae60; */
+  height:400px;
+  overflow: scroll;
+  overflow-x: hidden;
+  /* overflow-y: hidden; */
+  
+
+
+}
+.horic{
+
+  /* margin-top:-0.5px; */
 }

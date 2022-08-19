@@ -14,7 +14,7 @@ import Checkout from './Checkout';
   const[_id,set_id]=useState();
   const[quantityToCheckout,setQuantityToCheckout]=useState();
 
-  const [cartArray,setCartArray]=useState([]);
+//   const [cartArray,setCartArray]=useState([]);
   
   
   
@@ -22,9 +22,11 @@ import Checkout from './Checkout';
       total=Math.round(total)
       setTotalCost(total);
       setFinal([...final, total]);
-      
-      
       let intQuantity=parseInt(quantity);
+      console.log(sum);
+      
+      let cartArray={_id,images,title,price,intQuantity,total,sum};
+      
       bodyToNavbar(intQuantity,cartArray);
       setQuantityToCheckout(intQuantity)
       setImage(images);
@@ -33,7 +35,6 @@ import Checkout from './Checkout';
       set_id(_id);
       // console.log(total,quantity,title,images,price,_id)
         // const cart=[_id,image,title,price,intQuantity,total];
-        setCartArray([_id,images,title,price,intQuantity,total]);
         
         
         
