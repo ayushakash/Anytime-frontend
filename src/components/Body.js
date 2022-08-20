@@ -27,7 +27,7 @@ import Checkout from './Checkout';
       
       let cartArray={_id,images,title,price,intQuantity,total,sum};
       
-      bodyToNavbar(intQuantity,cartArray);
+      bodyToNavbar(intQuantity,cartArray,sum);
       setQuantityToCheckout(intQuantity)
       setImage(images);
       setTitle(title);

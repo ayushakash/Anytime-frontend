@@ -19,16 +19,18 @@ function App() {
   const [quantitySum, setQuantitySum] = useState([]);
   const [cartData, setCartData] = useState([]);
   const sum=quantitySum.reduce((partialSum, a) => partialSum + a, 0);
+  // const[sum1,setSum1]=useState(0)
   
   
   const bodyToNavbar=(quantity,cartArray)=>{
-    
-    console.log(cartArray);
+    // setSum1(sum1)
+    // console.log(cartArray);
+    // console.log(sum1)
     
     setQuantitySum([...quantitySum, quantity]);
       
     setCartData(current=>[...current,cartArray]);
-    console.log(cartData);
+    // console.log(cartData);
     
 
   }
@@ -38,7 +40,7 @@ function App() {
 
 <Routes>
                  <Route exact path='/' element={< Body bodyToNavbar={bodyToNavbar} />}></Route>
-                 <Route exact path='/cart' element={< Checkout cartData={cartData} />}></Route>
+                 <Route exact path='/cart' element={< Checkout cartData={cartData}  />}></Route>
                  
           </Routes>
 

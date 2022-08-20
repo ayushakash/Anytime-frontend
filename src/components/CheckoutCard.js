@@ -1,8 +1,18 @@
-import React from 'react'
+import React,{useState} from 'react'
 
-const CheckoutCard = ({title,price,images,intQuantity,total,sum}) => {
+const CheckoutCard = ({title,price,images,intQuantity,total}) => {
 
-  // console.log(title,price,image,quantity,totalCost);
+    
+  
+  // const [final, setFinal] = useState([]);
+  // const sum=final.reduce((partialSum, a) => partialSum + a, 0);
+  // setFinal(final=>[...final, total]);
+  // setFinal(final.push(total))
+  // let sum=total+total;
+  // console.log(sum);
+  // current=>[...current,cartArray]
+
+  // console.log(final);
 
     
   return (

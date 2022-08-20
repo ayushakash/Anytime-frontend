@@ -4,9 +4,10 @@ import CheckoutCard from './CheckoutCard';
 
 const Checkout = ({cartData}) => {
 
-  // console.log(cartData);
+  
+  
 
-    const [name,setName]=useState('');
+    const [name,setName]=useState('');    
     const [email,setEmail]=useState('');
     const [address,setAddress]=useState('');
     const [city,setCity]=useState(' Bangalore,Karnataka');
@@ -146,11 +147,6 @@ function showPosition(position) {
 
                 })
             }
-
-
-
-  
-        
         
       
     </div>
@@ -200,7 +196,7 @@ function showPosition(position) {
   
   
   <div className="col-md-6">
-  <button type="button" className={disable}  onClick={getLocation}><img src={tick} alt="image" className='location-image'></img>Deliver to current location</button>
+  <button type="submit" className={disable}  onClick={getLocation}><img src={tick} alt="image" className='location-image'></img>Deliver to current location</button>
   </div>
   
   <div className="col-md-6">
@@ -224,9 +220,9 @@ function showPosition(position) {
 
   
 
-<div class="modal fade bd-example-modal-sm border border-primary" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
+<div className="modal fade bd-example-modal-sm border border-primary" tabIndex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div className="modal-dialog modal-sm">
+    <div className="modal-content">
       <div className="qr-content">Scan and Pay here</div>
 
       <img src="/myqr.png" alt="image" className='qr-icon'></img>
