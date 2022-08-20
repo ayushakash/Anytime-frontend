@@ -120,6 +120,9 @@ function showPosition(position) {
     
   return (
     <>
+    <div className="row">
+
+    
     <div className="h-100 d-flex flex-row justify-content-between align-items-start">
     <div className="checkout-main">
         <div className="heading">
@@ -159,7 +162,16 @@ function showPosition(position) {
         <span className="badge text-bg-secondary">0</span>
     </button>
 </div>
-    </div>
+    
+</div>
+    
+
+
+
+
+
+
+
     <div className="subtotal">
     
     <div className="address">
@@ -240,6 +252,12 @@ function showPosition(position) {
 </div>
         
     </div>
+
+
+</div>
+
+
+    
       
     </>
   )

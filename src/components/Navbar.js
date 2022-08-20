@@ -27,20 +27,22 @@ const Navbar = ({sum}) => {
       <ul className="d-flex justify-content-center navbar-nav me-auto mb-2 mb-lg-1">        
         <input className="search-box" type="search" placeholder="Search for products " aria-label="Search"/>
       </ul>
-      <button class="nav-item dropdown btn btn-sm btn-outline-success mx-4 my-2">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Account
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><Link class="dropdown-item" to="/cart">Cart</Link></li>
-            <li data-bs-toggle="modal" data-bs-target="#staticBackdrop"><a class="dropdown-item" href="#">Login</a></li>
-            {/* <li><a class="dropdown-item" href="#">FAQs</a></li> */}
-            <li data-bs-toggle="modal" data-bs-target="#staticBackdrop1"><a class="dropdown-item" href="#">Become a partner</a></li>
-            <li><a class="dropdown-item" href="#">Logout</a></li>
-            <li><hr class="dropdown-divider"/></li>
-            <li><a class="dropdown-item" href="#"><div className="d-flex"><div className="qr"><img src="/anytime.png" alt="image" className='dropdown-qr'></img></div><div className="text">Scan and<br/> order <br/>grocery from<br/> your <span className="qr-span">mobile <br/>phone</span></div></div></a></li>
-          </ul>
-        </button>
+      <div/>
+      <div className="">
+      
+
+      <button type="button" className="navbar-brand btn btn-primary position-relative btn-sm mx-4" >            
+        <Link className="add-button" to="/cart">Cart</Link>
+  <img src="/shopping-basket.png" alt="image" className='basket-icon'></img>
+  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    {sum}
+    <span className="visually-hidden">unread messages</span>
+  </span>
+</button>
+
+
+      
+        </div>
       </div>
       
       <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -98,15 +100,30 @@ Login/Sign up</h5>
   </div>
 </div>
 
-      <div className="">
-        <button type="button" className="navbar-brand btn btn-primary position-relative btn-sm mx-4" >            
-        <Link className="add-button" to="/cart">Cart</Link>
-  <img src="/shopping-basket.png" alt="image" className='basket-icon'></img>
-  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-    {sum}
-    <span className="visually-hidden">unread messages</span>
-  </span>
-</button>
+      <div className="dropdown-navbar">
+        
+
+      <button class="nav-item dropdown btn btn-sm btn-outline-success mx-4 my-2">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Account
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><Link class="dropdown-item" to="/cart">Cart</Link></li>
+            <li data-bs-toggle="modal" data-bs-target="#staticBackdrop"><a class="dropdown-item" href="#">Login</a></li>
+            {/* <li><a class="dropdown-item" href="#">FAQs</a></li> */}
+            <li data-bs-toggle="modal" data-bs-target="#staticBackdrop1"><a class="dropdown-item" href="#">Become a partner</a></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+            <li><hr class="dropdown-divider"/></li>
+            <li><a class="dropdown-item" href="#"><div className="d-flex"><div className="qr"><img src="/anytime.png" alt="image" className='dropdown-qr'></img></div><div className="text">Scan and<br/> order <br/>grocery from<br/> your <span className="qr-span">mobile <br/>phone</span></div></div></a></li>
+          </ul>
+        </button>
+
+
+
+
+
+
+
 </div>
       
       
