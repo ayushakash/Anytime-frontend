@@ -1,3 +1,4 @@
+
 import React,{useState} from 'react';
 import CheckoutCard from './CheckoutCard'; 
 
@@ -9,6 +10,7 @@ const Checkout = ({cartData}) => {
 
     const [name,setName]=useState('');    
     const [email,setEmail]=useState('');
+    const [retailerEmail,setRetailerEmail]=useState('construction.akash9@gmail.com');
     const [address,setAddress]=useState('');
     const [city,setCity]=useState(' Bangalore,Karnataka');
     const [phone,setPhone]=useState('');
@@ -16,6 +18,55 @@ const Checkout = ({cartData}) => {
     const [tick1,setTick1]=useState('/google-maps.png');
     const [disable1,setDisable1]=useState("location-button");
     const [disable,setDisable]=useState("location-button");
+    const[nearestStore,setNearestStore]=useState();
+    const[mop,setMop]=useState('COD');
+
+
+    
+
+    async function  sendEmail(){
+      const response=  await fetch(
+      'http://localhost:4000/email',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          
+          mode: 'no-cors',
+        },
+        
+        body:new URLSearchParams(
+          {  
+            "name":name,
+            "address":address,
+            "customerEmail": email,
+            "retailerEmail":retailerEmail,
+            "mop": mop,
+            "storeName": nearestStore
+          })
+        
+      }
+      );
+      let resJson = await response.json();
+      console.log(resJson);
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   let   handleSubmit = async (e) => {         //activates when deliver to above location is clicked 
     e.preventDefault();
@@ -26,7 +77,6 @@ const Checkout = ({cartData}) => {
   }
 
 
-const[nearestStore,setNearestStore]=useState();
 
 
 function getLocation() {            /////to get current location of user
@@ -92,18 +142,31 @@ function showPosition(position) {
       function destructuring(s1, s2, s3, s4) {
   
           var store = {
-              "Cement House,Silk Board": s1,
-              "Siddhi Vinayak,Bannerghatta road": s2,
-              "Mishra Traders,Jayanagar": s3,
-              "Sana Traders,Domlur": s4
+              "SLV Stores,Silk Board": s1,
+              "Grocery bazar,Bannerghatta road": s2,
+              "Suvidha Store,Jayanagar": s3,
+              "Ali Traders,Domlur": s4
           };
           let storeSorted = Object
               .keys(store)
               .sort(function (a, b) {
                   return store[a] - store[b]
               })
-          setNearestStore(storeSorted[0]);
-          // nearestStore=storeSorted[0];
+
+              setNearestStore(storeSorted[0]);
+              // if (storeSorted[0]=='SLV Stores,Silk Board'){
+              //   setRetailerEmail('construction.akash9@gmail.com')
+              // }
+              // else if (storeSorted[0]=='Grocery bazar,Bannerghatta road'){
+              //   setRetailerEmail('construction.akash9@gmail.com')
+              // }
+              // else if (storeSorted[0]=='Suvidha Store,Jayanagar'){
+              //   setRetailerEmail('construction.akash9@gmail.com')
+              // }
+              // else {
+              //   setRetailerEmail('construction.akash9@gmail.com')
+              // }
+          
           console.log(storeSorted[0]);
           // sendEmail.sendEmail(name,email,total,address,phone,nearestStore);
   
@@ -113,9 +176,6 @@ function showPosition(position) {
 
   
   
-  // const [_id,images,title,price,intQuantity,totalCost]=cartData;
-  
-  // let data=[{"title":title,"price":price,"image":images,"quantity":intQuantity,"totalCost":totalCost,"id":_id}]
   
     
   return (
@@ -223,12 +283,12 @@ function showPosition(position) {
     <button type="button" className="payment-button" data-toggle="modal" data-target=".bd-example-modal-sm"><img src="/google-pay.png" alt="image" className='button-icon'></img></button>
     <button type="button" className="payment-button" data-toggle="modal" data-target=".bd-example-modal-sm"><img src="/paytm.png" alt="image" className='button-icon'></img></button>
     <button type="button" className="payment-button" data-toggle="modal" data-target=".bd-example-modal-sm"><img src="/upi2.png" alt="image" className='button-icon'></img></button>
-    <button type="button" className="payment-button"><img src="/cod.jpg" alt="image" className='button-icon'></img></button>
+    <button type="button" className="payment-button" ><img src="/cod.jpg" alt="image" className='button-icon'></img></button>
 
 
     </div>
     <div className="d-grid gap-2">
-  <button className="button-68" type="submit">CHECKOUT</button>
+  <button className="button-68" type="submit" onClick={sendEmail}>CHECKOUT</button>
 
   
 
