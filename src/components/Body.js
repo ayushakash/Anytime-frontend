@@ -25,7 +25,7 @@ import Checkout from './Checkout';
       let intQuantity=parseInt(quantity);
       console.log(sum);
       
-      let cartArray={_id,images,title,price,intQuantity,total,sum};
+      let cartArray={_id,images,title,price,intQuantity,total};
       
       bodyToNavbar(intQuantity,cartArray,sum);
       setQuantityToCheckout(intQuantity)

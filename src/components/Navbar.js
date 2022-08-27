@@ -19,8 +19,8 @@ const Navbar = ({sum}) => {
   return (
     <>
     
-    <nav className="navbar navbar-expand-lg bg-light">
   <div className="container-fluid">
+    <nav className="navbar navbar-expand-lg bg-light">
     <Link className="navbar-brand" to="/"><img src="/24-hours.png" alt="image" className='icon'></img>Anytime Mart</Link>
     
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -128,8 +128,8 @@ Login/Sign up</h5>
       
       
     
-  </div>
 </nav>
+  </div>
 {/* <Body bodyToNavbar={bodyToNavbar}/>   */}
       
     </>
